@@ -19,12 +19,15 @@ class ThirdPage extends ConsumerWidget {
         title: 'Third Screen',
         context: context,
       ),
-      body: PagedListView<int, UserModel>(
-        pagingController: state,
-        builderDelegate: PagedChildBuilderDelegate<UserModel>(
-          itemBuilder: (context, user, index) {
-            return _buildUserTile(user, ref, context);
-          },
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        child: PagedListView<int, UserModel>(
+          pagingController: state,
+          builderDelegate: PagedChildBuilderDelegate<UserModel>(
+            itemBuilder: (context, user, index) {
+              return _buildUserTile(user, ref, context);
+            },
+          ),
         ),
       ),
     );
